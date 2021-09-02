@@ -1,0 +1,11 @@
+.card {
+  width: 30%;
+  height: 10rem;
+  background-color: rgb(169, 194, 240);
+  color: crimson;
+  margin: 2rem;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 2rem;
+  font-weight: bold;
+}
