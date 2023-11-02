@@ -1,5 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
+import Textform from "./components/Textform/Textform";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         about="About Us"
         color="lightgrey"
       />
+      <Textform heading="Enter the text to analyze" />
       {/* <Navbar /> */}
     </>
   );
