@@ -1,10 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Navbar = (props) => {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
+        <div
+          className="container-fluid"
+          style={{ backgroundColor: props.color }}
+        >
           <a className="navbar-brand" href="/">
             {props.title}
           </a>
@@ -48,6 +52,20 @@ const Navbar = (props) => {
       </nav>
     </>
   );
+};
+
+Navbar.propTypes = {
+  title: PropTypes.string,
+  home: PropTypes.string,
+  about: PropTypes.string,
+  color: PropTypes.string,
+};
+
+Navbar.defaultProps = {
+  title: "Set title here",
+  home: "Home",
+  about: "About Us",
+  color: "lightblue",
 };
 
 export default Navbar;
