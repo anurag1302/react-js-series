@@ -11,6 +11,11 @@ const Textform = (props) => {
     setText(updatedText);
   };
 
+  const handleOnLoClick = () => {
+    let updatedText = text.toLowerCase();
+    setText(updatedText);
+  };
+
   const [text, setText] = useState("");
   return (
     <>
@@ -26,9 +31,21 @@ const Textform = (props) => {
             onChange={handleOnChange}
           ></textarea>
         </div>
-        <button className="btn btn-primary" onClick={handleOnClick}>
+        <button className="btn btn-primary mx-2" onClick={handleOnClick}>
           Uppercase
         </button>
+        <button className="btn btn-primary mx-2" onClick={handleOnLoClick}>
+          Lowercase
+        </button>
+      </div>
+      <div className="container">
+        <h2>Your text summary</h2>
+        <p>
+          {text.split(" ").length} words {text.length} characters
+        </p>
+        <p>{0.008 * text.split(" ").length} minutes read</p>
+        <h2>Preview</h2>
+        <p>{text}</p>
       </div>
     </>
   );
