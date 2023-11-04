@@ -16,6 +16,18 @@ const Textform = (props) => {
     setText(updatedText);
   };
 
+  const handleOnCamelCaseClick = () => {
+    let lowerCase = text.toLowerCase();
+    let updatedText = lowerCase
+      .split(" ")
+      .reduce((s, c) => s + (c.charAt(0).toUpperCase() + c.slice(1)));
+    setText(updatedText);
+  };
+
+  const handleOnClearClick = () => {
+    setText("");
+  };
+
   const [text, setText] = useState("");
   return (
     <>
@@ -36,6 +48,15 @@ const Textform = (props) => {
         </button>
         <button className="btn btn-primary mx-2" onClick={handleOnLoClick}>
           Lowercase
+        </button>
+        <button
+          className="btn btn-primary mx-2"
+          onClick={handleOnCamelCaseClick}
+        >
+          Camelcase
+        </button>
+        <button className="btn btn-primary mx-2" onClick={handleOnClearClick}>
+          Clear
         </button>
       </div>
       <div className="container">
